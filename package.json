@@ -1,0 +1,27 @@
+{
+    "name": "etherproxy",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "bin": {
+        "etherproxy": "./dist/index.js"
+    },
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "prepare": "npm run build",
+        "build": "rimraf dist && tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "cafe-utility": "^9.0.1",
+        "node-fetch": "^2.6.9"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "@types/node-fetch": "^2.6.3",
+        "rimraf": "^4.4.1",
+        "typescript": "^5.0.3"
+    }
+}
