@@ -2,6 +2,7 @@
 
 import { Arrays, Objects } from 'cafe-utility'
 import { IncomingMessage, ServerResponse, createServer } from 'http'
+import fetch from 'node-fetch'
 import { RequestContext, ResponseContext } from './types'
 import { fetchWithTimeout, respondWithFetchPromise } from './utility'
 
@@ -13,7 +14,19 @@ function main() {
     const expiry = Arrays.requireNumberArgument(process.argv, 'expiry')
 
     const fastIndex = Objects.createFastIndex()
-    const server = createServer((request: IncomingMessage, response: ServerResponse) => {
+    const server = createServer(async (request: IncomingMessage, response: ServerResponse) => {
+        if (request.url === '/health' || request.url === '/readiness') {
+            try {
+                await fetch(target, { timeout: 10_000 })
+                response.statusCode = 200
+                response.end('200 OK')
+            } catch (error) {
+                console.error(error)
+                response.statusCode = 503
+                response.end('503 Service Unavailable')
+            }
+            return
+        }
         const chunks: Buffer[] = []
         request.on('data', (chunk: Buffer) => {
             chunks.push(chunk)
