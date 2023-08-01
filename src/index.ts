@@ -68,4 +68,5 @@ function main() {
         })
     })
     server.listen(port)
+    console.log(`[~] Etherproxy is running on port ${port}`)
 }
