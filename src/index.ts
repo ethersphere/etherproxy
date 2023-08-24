@@ -9,9 +9,9 @@ import { fetchWithTimeout, respondWithFetchPromise } from './utility'
 main()
 
 function main() {
-    const port = Arrays.requireNumberArgument(process.argv, 'port')
-    const target = Arrays.requireStringArgument(process.argv, 'target')
-    const expiry = Arrays.requireNumberArgument(process.argv, 'expiry')
+    const port: number = parseInt(Arrays.getArgument(process.argv, 'port') as string) || parseInt((process.env.ETHERPROXY_PORT as string)) || 9000
+    const target: string = Arrays.getArgument(process.argv, 'target') as string || process.env.ETHERPROXY_TARGET as string || "http://localhost:8545"
+    const expiry: number = parseInt(Arrays.getArgument(process.argv, 'expiry') as string) || parseInt((process.env.ETHERPROXY_EXPIRY as string)) || 2000
 
     const fastIndex = Objects.createFastIndex()
     const server = createServer(async (request: IncomingMessage, response: ServerResponse) => {

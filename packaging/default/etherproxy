@@ -1,0 +1,5 @@
+# Configuration for etherproxy daemon
+
+#ETHERPROXY_TARGET=http://localhost:8545
+#ETHERPROXY_PORT=9000
+#ETHERPROXY_EXPIRY=2000
