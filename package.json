@@ -9,7 +9,7 @@
     "scripts": {
         "start": "ts-node src/index.ts",
         "prepare": "npm run build",
-        "build": "tsc"
+        "build": "tsc && chmod +x dist/index.js"
     },
     "keywords": [],
     "author": "@Cafe137",
