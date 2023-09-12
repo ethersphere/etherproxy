@@ -1,6 +1,6 @@
 {
     "name": "etherproxy",
-    "version": "1.3.0",
+    "version": "1.0.0",
     "description": "JSON-RPC reverse proxy tool designed for caching requests",
     "main": "dist/index.js",
     "bin": {
@@ -24,15 +24,15 @@
         "typescript": "^5.0.3"
     },
     "node_deb": {
-      "entrypoints": {
-        "daemon": "dist/index.js"
-      },
-      "init": "systemd",
-      "install_strategy": "copy",
-      "package_name": "etherproxy",
-      "templates": {
-        "default_variables": "packaging/default/etherproxy",
-        "systemd_service": "packaging/systemd/etherproxy.service"
-      }
+        "entrypoints": {
+            "daemon": "dist/index.js"
+        },
+        "init": "systemd",
+        "install_strategy": "copy",
+        "package_name": "etherproxy",
+        "templates": {
+            "default_variables": "packaging/default/etherproxy",
+            "systemd_service": "packaging/systemd/etherproxy.service"
+        }
     }
 }
