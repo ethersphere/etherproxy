@@ -18,7 +18,7 @@ jobs:
       - uses: GoogleCloudPlatform/release-please-action@v3
         id: release
         with:
-          token: ${{ secrets.GHA_PAT_BASIC }}
+          token: ${{ secrets.GHA_PAT_ADVANCED }}
           release-type: node
           package-name: etherproxy
           bump-minor-pre-major: true
