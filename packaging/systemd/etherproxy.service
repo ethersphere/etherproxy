@@ -1,0 +1,17 @@
+[Unit]
+Description=JSON-RPC reverse proxy tool designed for caching requests
+Requires=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/etherproxy
+WorkingDirectory=/usr/share/etherproxy/app
+ExecStart=/usr/share/etherproxy/app/dist/index.js
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+User=etherproxy
+PermissionsStartOnly=true
+SyslogIdentifier=etherproxy
+
+[Install]
+WantedBy=multi-user.target
