@@ -15,7 +15,7 @@
     "author": "@Cafe137",
     "license": "MIT",
     "dependencies": {
-        "cafe-utility": "^10.8.1",
+        "cafe-utility": "^10.25.0",
         "node-fetch": "^2.6.9"
     },
     "devDependencies": {
