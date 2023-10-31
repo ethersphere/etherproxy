@@ -6,12 +6,10 @@ export async function respondWithFetchPromise(
     id: number,
     response: ServerResponse,
     promise: Promise<ResponseContext | null>
-) {
+): Promise<boolean> {
     const context = await promise
     if (!context) {
-        response.statusCode = 503
-        response.end('503 Service Unavailable')
-        return
+        return false
     }
     for (const [key, value] of Object.entries(context.headers)) {
         const lowerCaseKey = key.toLowerCase()
@@ -23,6 +21,7 @@ export async function respondWithFetchPromise(
     response.statusCode = context.status
     context.json.id = id
     response.end(JSON.stringify(context.json))
+    return true
 }
 
 export async function fetchWithTimeout(url: string, options: RequestInit): Promise<ResponseContext | null> {

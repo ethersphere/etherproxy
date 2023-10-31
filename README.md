@@ -27,10 +27,10 @@ curl http://localhost:9000 -H "Content-Type: application/json" -X POST --data '{
 When the text `Cache hit` appears, it indicates that a request was saved and immediately returned:
 
 ```txt
-[~] Key: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
-[~] Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
-[~] Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
-[~] Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
+Key: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
+Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
+Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
+Cache hit: {"jsonrpc":"2.0","method":"eth_blockNumber","params":[]}
 ```
 
 ## Benefits
