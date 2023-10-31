@@ -6,7 +6,7 @@ export type Target = {
 }
 
 export function getHealthyTarget(targets: Target[]): Target {
-    const healthyIfLastErrorIsAfter = Date.now() - Dates.hours(2)
-    const healthyTargets = targets.filter(x => x.lastErrorAt < healthyIfLastErrorIsAfter)
+    const healthyIfLastErrorIsBefore = Date.now() - Dates.hours(2)
+    const healthyTargets = targets.filter(x => x.lastErrorAt < healthyIfLastErrorIsBefore)
     return healthyTargets[0] || targets[0]
 }
