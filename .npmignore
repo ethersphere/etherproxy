@@ -1,0 +1,6 @@
+src
+.github
+packaging
+.dockerignore
+Dockerfile
+tsconfig.json

@@ -1,6 +1,6 @@
 {
     "name": "etherproxy",
-    "version": "1.0.0",
+    "version": "1.4.0",
     "description": "JSON-RPC reverse proxy tool designed for caching requests",
     "main": "dist/index.js",
     "bin": {
