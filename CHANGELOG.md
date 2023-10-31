@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ethersphere/etherproxy/compare/v1.0.0...v1.1.0) (2023-10-31)
+
+
+### Features
+
+* add failover ([#29](https://github.com/ethersphere/etherproxy/issues/29)) ([f7fa106](https://github.com/ethersphere/etherproxy/commit/f7fa10624623c256f1c66b0f2cad6c8420f98037))
+
 ## 1.0.0 (2023-09-12)
 
 
