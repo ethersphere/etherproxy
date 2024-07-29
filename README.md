@@ -5,7 +5,7 @@ Etherproxy is a robust and lightweight JSON-RPC reverse proxy tool designed for 
 ## Usage
 
 ```
-npx etherproxy --port 9000 --target https://gno.getblock.io/YOUR_TOKEN/mainnet/ --expiry 2000
+npx etherproxy --port 9000 --target https://go.getblock.io/YOUR_TOKEN --expiry 2000
 ```
 
 The command above starts the JSON-RPC reverse proxy...
@@ -19,7 +19,7 @@ Make sure to replace `YOUR_TOKEN` with your actual token.
 Supply multiple JSON-RPC `--target` with a comma-separated string:
 
 ```
-npx etherproxy --target https://gno.getblock.io/YOUR_TOKEN/mainnet/,https://rpc.gnosischain.com
+npx etherproxy --target https://go.getblock.io/YOUR_TOKEN,https://rpc.gnosischain.com
 ```
 
 ## Verify the tool is running
