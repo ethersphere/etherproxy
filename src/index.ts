@@ -3,6 +3,7 @@
 import { Arrays, Objects } from 'cafe-utility'
 import { IncomingMessage, ServerResponse, createServer } from 'http'
 import fetch from 'node-fetch'
+import { metrics } from './metrics'
 import { Target, getHealthyTarget } from './target'
 import { RequestContext, ResponseContext } from './types'
 import { fetchWithTimeout, respondWithFetchPromise } from './utility'
@@ -38,7 +39,7 @@ function main() {
                 try {
                     await fetch(target.url, { timeout: 10_000 })
                     response.statusCode = 200
-                    response.end('200 OK')
+                    response.end(`200 OK - ${metrics.requests} requests served`)
                     return
                 } catch (error) {
                     target.lastErrorAt = Date.now()
@@ -66,6 +67,7 @@ function main() {
                     const parsedBody = JSON.parse(context.body)
                     const id = parsedBody.id
                     delete parsedBody.id
+                    metrics.requests++
                     const key = `${target.url}_${JSON.stringify(parsedBody)}`
                     const cachedPromise = Objects.getFromFastIndexWithExpiracy(
                         fastIndex,
