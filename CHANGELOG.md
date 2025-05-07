@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/ethersphere/etherproxy/compare/v1.1.0...v1.2.0) (2025-04-16)
+
+
+### Features
+
+* add metrics ([d628cec](https://github.com/ethersphere/etherproxy/commit/d628cec0c47b94efc8a5d91241e5a1e844f1681d))
+
 ## [1.1.0](https://github.com/ethersphere/etherproxy/compare/v1.0.0...v1.1.0) (2023-10-31)
 
 
