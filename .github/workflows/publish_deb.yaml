@@ -11,6 +11,8 @@ permissions:
 jobs:
   deb-release:
     runs-on: ubuntu-latest
+    # Publishing credentials (Gemfury) are scoped to this environment (release tags only).
+    environment: release-ci
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
